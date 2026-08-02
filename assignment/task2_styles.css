@@ -1,0 +1,307 @@
+/* ==========================================================================
+   TASK 2: CSS
+   File   : task2_styles.css
+   Purpose: Style the "ANITS College Information Portal" page created in
+            Task 1,
+            demonstrating CSS selectors, the box model, colours/typography,
+            Flexbox layout, positioning, pseudo-classes, transitions and
+            responsive design (media queries).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (VARIABLES)
+   Defined on :root so they can be reused throughout the stylesheet.
+   -------------------------------------------------------------------- */
+:root {
+    --color-primary: #1b3a6b;   /* deep academic blue   */
+    --color-accent:  #4a90d9;   /* highlight blue        */
+    --color-bg:      #f5f7fa;   /* page background       */
+    --color-surface: #ffffff;   /* card / section bg     */
+    --color-text:    #26313d;   /* body text              */
+    --color-border:  #d7dee6;
+    --radius: 8px;
+    --spacing: 1rem;
+}
+
+/* --------------------------------------------------------------------
+   2. UNIVERSAL / TYPE SELECTOR
+   * selects every element - used here for a predictable box model.
+   -------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* padding & border included in element width */
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------
+   3. HEADER - Flexbox is used to align the logo and title side by side
+   -------------------------------------------------------------------- */
+.site-header {
+    display: flex;            /* Flexbox layout            */
+    align-items: center;      /* vertical centering         */
+    gap: var(--spacing);
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 1.2rem 2rem;
+}
+
+.site-header .logo {
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.header-text h1 {
+    font-size: 1.6rem;
+}
+
+/* --------------------------------------------------------------------
+   4. NAVIGATION - sticky positioning + Flexbox menu
+   -------------------------------------------------------------------- */
+.site-nav {
+    position: sticky;   /* CSS positioning: sticks below header on scroll */
+    top: 0;
+    z-index: 10;
+    background-color: var(--color-accent);
+}
+
+.site-nav ul {
+    display: flex;             /* horizontal menu using Flexbox */
+    list-style: none;          /* remove bullets from <ul>       */
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* smooth hover effect */
+}
+
+/* Pseudo-class :hover - changes style when the mouse is over the link */
+.site-nav a:hover,
+.site-nav a:focus {
+    background-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------
+   5. GENERIC SECTION / ARTICLE CARDS - demonstrates the BOX MODEL
+   (content -> padding -> border -> margin)
+   -------------------------------------------------------------------- */
+section,
+article {
+    background-color: var(--color-surface);
+    max-width: 900px;
+    margin: 1.5rem auto;   /* margin: outside spacing, centers the card */
+    padding: 1.5rem 2rem;  /* padding: inside spacing                    */
+    border: 1px solid var(--color-border); /* border                     */
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+h3, h4 {
+    margin: 0.8rem 0 0.4rem;
+    color: var(--color-primary);
+}
+
+/* Descendant selector: only <li> inside a section's <ul>/<ol> */
+section ul li,
+section ol li {
+    margin-left: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+/* --------------------------------------------------------------------
+   6. TABLE STYLING
+   -------------------------------------------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.8rem;
+}
+
+caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+th, td {
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Pseudo-class :nth-child - zebra striping for readability */
+tbody tr:nth-child(even) {
+    background-color: #eef3f9;
+}
+
+tbody tr:hover {
+    background-color: #dceafd;
+}
+
+/* --------------------------------------------------------------------
+   7. GALLERY - CSS GRID layout for images
+   -------------------------------------------------------------------- */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+#gallery figure img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.3rem;
+}
+
+/* --------------------------------------------------------------------
+   8. FORM STYLING
+   -------------------------------------------------------------------- */
+form label {
+    font-weight: bold;
+    display: inline-block;
+    min-width: 140px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form input[type="date"],
+form select,
+form textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    width: 60%;
+    max-width: 320px;
+}
+
+/* Pseudo-class :focus - highlights the active field */
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.3);
+}
+
+fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 0 0.4rem;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.15s ease, opacity 0.3s ease;
+}
+
+input[type="submit"] {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+input[type="reset"] {
+    background-color: #e2e6ea;
+    color: var(--color-text);
+}
+
+/* Pseudo-class :active - button pressed state */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    opacity: 0.85;
+}
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: scale(0.97);
+}
+
+/* --------------------------------------------------------------------
+   9. MEDIA SECTION
+   -------------------------------------------------------------------- */
+audio, video, iframe {
+    display: block;
+    margin: 0.6rem 0 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+/* --------------------------------------------------------------------
+   10. FOOTER
+   -------------------------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-top: 2rem;
+}
+
+/* --------------------------------------------------------------------
+   11. RESPONSIVE DESIGN - Media Query
+   Adjusts layout for smaller screens (mobile devices).
+   -------------------------------------------------------------------- */
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column;   /* stack logo & text vertically */
+        text-align: center;
+    }
+
+    .site-nav ul {
+        flex-direction: column;   /* stack nav links vertically   */
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
+    form input,
+    form select,
+    form textarea {
+        width: 100%;
+        max-width: none;
+    }
+}

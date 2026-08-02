@@ -1,0 +1,355 @@
+<!doctype html>
+<!-- 
+    TASK 1: HTML / HTML5
+    Title      : College Information Portal
+    Purpose    : Demonstrate HTML5 document structure, basic tags, text
+                 formatting, lists, hyperlinks, tables, images, forms,
+                 semantic elements, HTML5 input types and multimedia.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANITS College Information Portal</title>
+
+    <!-- External stylesheet created in Task 2 (CSS) -->
+    <link rel="stylesheet" href="task2_styles.css" />
+  </head>
+  <body>
+    <!-- ===================== HEADER (Semantic Element) ===================== -->
+    <header class="site-header">
+      <img
+        src="https://www.jeduka.com/storage/school_image/2/anil-neerukonda-institute-of-technology-and-sciences-anits.jpg"
+        alt="ANITS College Logo"
+        class="logo"
+        width="80"
+        height="80"
+      />
+      <div class="header-text">
+        <h1>Anil Neerukonda Institute of Technology &amp; Sciences (ANITS)</h1>
+        <p>
+          Sangivalasa, Bheemunipatnam Mandal, Visakhapatnam &mdash; Autonomous |
+          NAAC 'A' Grade
+        </p>
+      </div>
+    </header>
+
+    <!-- ===================== NAVIGATION (Semantic Element) ===================== -->
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#media">Media</a></li>
+        <!-- External hyperlinks open in a new tab using target="_blank" -->
+        <li>
+          <a href="https://www.google.com" target="_blank" rel="noopener"
+            >Google</a
+          >
+        </li>
+        <li>
+          <a href="https://www.anits.edu.in" target="_blank" rel="noopener"
+            >ANITS Website</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- ===================== PART A: BASIC HTML ===================== -->
+      <section id="about">
+        <h2>About the College</h2>
+        <p>
+          <b>Anil Neerukonda Institute of Technology &amp; Sciences (ANITS)</b>
+          was established in <i>the academic year 2001&ndash;02</i> and is
+          <u>permanently affiliated to Andhra University, Visakhapatnam</u>.
+          Approved by AICTE, New Delhi, and accredited by NAAC with an 'A'
+          grade, the institute offers undergraduate and postgraduate programs in
+          engineering and technology, and has held autonomous status since 2015.
+        </p>
+
+        <!-- Superscript and Subscript demonstration -->
+        <p>
+          ANITS students frequently publish research in areas such as Water
+          (H<sub>2</sub>O) treatment and environmental engineering, with several
+          papers ranked 1<sup>st</sup> at national-level conferences.
+        </p>
+
+        <h3>Why Choose ANITS?</h3>
+
+        <!-- Unordered List -->
+        <h4>Our Key Strengths (Unordered List)</h4>
+        <ul>
+          <li>
+            Permanently affiliated to Andhra University and NAAC 'A' grade
+            accredited
+          </li>
+          <li>
+            Autonomous institution with modern laboratories and Wi-Fi enabled
+            campus
+          </li>
+          <li>
+            Strong industry ties under Megha Engineering and Infrastructure
+            Limited (MEIL)
+          </li>
+          <li>
+            Vibrant 12-acre campus in Sangivalasa, close to the
+            Chennai&ndash;Kolkata Highway
+          </li>
+        </ul>
+
+        <!-- Ordered List -->
+        <h4>Admission Process (Ordered List)</h4>
+        <ol>
+          <li>Appear for AP EAMCET (for B.Tech admissions)</li>
+          <li>Register through the EAMCET web counselling portal</li>
+          <li>
+            Exercise seat options based on rank (Category-A) or apply under
+            Management/NRI quota (Category-B)
+          </li>
+          <li>Report to ANITS and confirm admission by fee payment</li>
+        </ol>
+
+        <!-- Hyperlinks -->
+        <p>
+          Visit our official website:
+          <a href="https://www.anits.edu.in" target="_blank" rel="noopener"
+            >ANITS Website</a
+          >
+          &nbsp;|&nbsp; Search more on
+          <a href="https://www.google.com" target="_blank" rel="noopener"
+            >Google</a
+          >
+        </p>
+      </section>
+
+      <!-- ===================== PART B: TABLES & IMAGES ===================== -->
+      <section id="students">
+        <h2>Student Details</h2>
+        <table border="1">
+          <caption>
+            List of Registered Students
+          </caption>
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Branch</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A216552197</td>
+              <td>Aditi Sharma</td>
+              <td>Computer Science &amp; Engineering</td>
+              <td>aditi.sharma@anits.edu.in</td>
+            </tr>
+            <tr>
+              <td>A216552198</td>
+              <td>Rahul Verma</td>
+              <td>Electronics &amp; Communication Engg.</td>
+              <td>rahul.verma@anits.edu.in</td>
+            </tr>
+            <tr>
+              <td>A216552199</td>
+              <td>Sneha Reddy</td>
+              <td>Mechanical Engineering</td>
+              <td>sneha.reddy@anits.edu.in</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <article id="gallery">
+        <h2>Campus Gallery</h2>
+        <!-- College logo image -->
+        <figure>
+          <img
+            src="https://www.jeduka.com/storage/school_image/2/anil-neerukonda-institute-of-technology-and-sciences-anits.jpg"
+            alt="ANITS College Logo"
+            width="120"
+          />
+          <figcaption>Official ANITS Logo</figcaption>
+        </figure>
+
+        <!-- Relevant image with meaningful alternate text -->
+        <figure>
+          <img
+            src="https://www.anits.org/static/images/campus.jpg"
+            alt="ANITS campus academic block surrounded by lawns in Sangivalasa"
+            width="400"
+          />
+          <figcaption>ANITS Main Academic Block, Sangivalasa Campus</figcaption>
+        </figure>
+      </article>
+
+      <!-- ===================== PART C: FORMS ===================== -->
+      <section id="registration">
+        <h2>Student Registration Form</h2>
+        <form action="#" method="post">
+          <!-- Text input -->
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="student_name"
+            placeholder="Enter your full name"
+            required
+          /><br /><br />
+
+          <!-- HTML5 email input -->
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="student_email"
+            placeholder="you@example.com"
+            required
+          /><br /><br />
+
+          <!-- Password input -->
+          <label for="pwd">Password:</label>
+          <input
+            type="password"
+            id="pwd"
+            name="student_password"
+            minlength="6"
+            required
+          /><br /><br />
+
+          <!-- Radio Buttons -->
+          <fieldset>
+            <legend>Gender:</legend>
+            <input type="radio" id="male" name="gender" value="male" checked />
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="other" />
+            <label for="other">Other</label>
+          </fieldset>
+          <br />
+
+          <!-- Checkboxes -->
+          <fieldset>
+            <legend>Hobbies:</legend>
+            <input
+              type="checkbox"
+              id="reading"
+              name="hobbies"
+              value="reading"
+            />
+            <label for="reading">Reading</label>
+
+            <input type="checkbox" id="sports" name="hobbies" value="sports" />
+            <label for="sports">Sports</label>
+
+            <input type="checkbox" id="music" name="hobbies" value="music" />
+            <label for="music">Music</label>
+          </fieldset>
+          <br />
+
+          <!-- Dropdown -->
+          <label for="branch">Branch:</label>
+          <select id="branch" name="branch">
+            <option value="cse">Computer Science &amp; Engineering</option>
+            <option value="it">Information Technology</option>
+            <option value="ece">Electronics &amp; Communication Engg.</option>
+            <option value="eee">Electrical &amp; Electronics Engg.</option>
+            <option value="mech">Mechanical Engineering</option></select
+          ><br /><br />
+
+          <!-- Textarea -->
+          <label for="comments">Comments:</label><br />
+          <textarea
+            id="comments"
+            name="comments"
+            rows="4"
+            cols="40"
+            placeholder="Any additional remarks..."
+          ></textarea
+          ><br /><br />
+
+          <!-- ============ HTML5 Input Types (Part D) placed inside the form ============ -->
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" /><br /><br />
+
+          <label for="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            min="16"
+            max="60"
+          /><br /><br />
+
+          <label for="fav-color">Favourite Colour:</label>
+          <input
+            type="color"
+            id="fav-color"
+            name="fav_color"
+            value="#4a90d9"
+          /><br /><br />
+
+          <label for="satisfaction">Satisfaction Level:</label>
+          <input
+            type="range"
+            id="satisfaction"
+            name="satisfaction"
+            min="0"
+            max="10"
+            value="5"
+          /><br /><br />
+
+          <!-- Submit and Reset buttons -->
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        </form>
+      </section>
+
+      <!-- ===================== PART D: HTML5 MULTIMEDIA ===================== -->
+     <!-- ===================== PART D: HTML5 MULTIMEDIA ===================== -->
+<section id="media">
+    <h2>Campus Media</h2>
+
+    <!-- Audio -->
+    <h3>ANITS College Anthem (Audio)</h3>
+    <audio controls>
+        <source src="media/anits-anthem.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+   
+    <!-- YouTube Embed -->
+    <h3>ANITS Campus Tour (YouTube)</h3>
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/LGzFBhVqQ20"
+        title="ANITS Campus Tour"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+
+    <!-- Google Maps -->
+    <h3>ANITS Location Map</h3>
+    <iframe
+        src="https://www.google.com/maps/embed?pb="
+        width="400"
+        height="250"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="ANITS Location">
+    </iframe>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+    <p>&copy; 2026 Anil Neerukonda Institute of Technology &amp; Sciences (ANITS), Visakhapatnam. All Rights Reserved.</p>
+</footer>
+  </body>
+</html>
