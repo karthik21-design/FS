@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile Generator</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding: 30px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .form-container {
+        margin-bottom: 20px;
+      }
+
+      input {
+        padding: 8px;
+        margin: 8px;
+        width: 250px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .profile {
+        width: 350px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        text-align: left;
+      }
+
+      .profile h2 {
+        text-align: center;
+        color: #007bff;
+      }
+
+      .profile p {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Profile Generator</h1>
+
+    <div class="form-container">
+      <input type="text" id="name" placeholder="Enter Name" /><br />
+      <input type="text" id="rollNo" placeholder="Enter Roll Number" /><br />
+      <input type="text" id="department" placeholder="Enter Department" /><br />
+      <input
+        type="number"
+        step="0.01"
+        id="cgpa"
+        placeholder="Enter CGPA"
+      /><br />
+
+      <button id="createBtn">Create Profile</button>
+    </div>
+
+    <div id="profileContainer"></div>
+
+    <script>
+      // Student Class
+      class Student {
+        constructor(name, rollNo, department, cgpa) {
+          this.name = name;
+          this.rollNo = rollNo;
+          this.department = department;
+          this.cgpa = cgpa;
+        }
+      }
+
+      // Button Click Event
+      document
+        .getElementById("createBtn")
+        .addEventListener("click", function () {
+          // Get user input
+          const name = document.getElementById("name").value;
+          const rollNo = document.getElementById("rollNo").value;
+          const department = document.getElementById("department").value;
+          const cgpa = document.getElementById("cgpa").value;
+
+          // Create Student Object
+          const student = new Student(name, rollNo, department, cgpa);
+
+          // Select container
+          const container = document.getElementById("profileContainer");
+
+          // Clear previous profile
+          container.innerHTML = "";
+
+          // Create profile card dynamically
+          const profileDiv = document.createElement("div");
+          profileDiv.className = "profile";
+
+          profileDiv.innerHTML = `
+                <h2>Student Profile</h2>
+                <p><span class="label">Name :</span> ${student.name}</p>
+                <p><span class="label">Roll No :</span> ${student.rollNo}</p>
+                <p><span class="label">Department :</span> ${student.department}</p>
+                <p><span class="label">CGPA :</span> ${student.cgpa}</p>
+            `;
+
+          // Add profile to webpage
+          container.appendChild(profileDiv);
+        });
+    </script>
+  </body>
+</html>
